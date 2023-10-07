@@ -12,11 +12,11 @@ public class Journal{
     //Displays a list of menu options and asks for user selection
     public int DisplayMenu(){
         Console.WriteLine("Welcome! Please input a number the correlates with the following menu options:");
-        Console.WriteLine("1. Load Journal");
-        Console.WriteLine("2. New Journal Entry");
-        Console.WriteLine("3. Display Journal");
-        Console.WriteLine("4. Save Journal Entry");
-        Console.WriteLine("5. Quit Program");
+        Console.WriteLine("1. Write");
+        Console.WriteLine("2. Display");
+        Console.WriteLine("3. Load");
+        Console.WriteLine("4. Save");
+        Console.WriteLine("5. Quit");
 
         string userInputOption = Console.ReadLine();
         int userInput = int.Parse(userInputOption);
@@ -24,9 +24,8 @@ public class Journal{
         return userInput;
     }
 
-    //Method to trun txt file to list of strings to iterate through
+    //run txt file to list of strings to iterate through
     public List<string> InitializeJournal(string _fileName){
-        
         return null;
     }
 
