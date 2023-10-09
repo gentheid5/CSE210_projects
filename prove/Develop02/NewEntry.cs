@@ -1,25 +1,38 @@
 public class Entry{
 //Attributes
     //string for users new entry
-    public string _newWrite = "";
+    public string _newWrite;
+
+    //string to store current prompt
+    public string _chosenPrompt;
+
+    // list to store current entries in journal
+    public List<string> _currentEntries = new List<string>();
 
 
 //Methods
     //Stores new entry
-    public List<string> StoreEntry(string _newEntry, string _newPrompt){
-        // creates new list called _entries that stores the date, prompt, and entry
-        List<string> _entries = new List<string>();
+    public void StoreEntry(string _newEntry, string _chosenPrompt){
         //returns current date
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
 
-        _entries.Add($"{dateText}: {_newPrompt} \n{_newEntry}");
-
-        return _entries;
+        _currentEntries.Add($"{dateText}: {_newWrite} \n{_chosenPrompt}");
     }
 
+
+    //diplay prompt and return new entry
+    public void DisplayEntry(){
+        ChoosePrompt();
+        Console.Write($"{_chosenPrompt}\n>");
+        string _newWrite = Console.ReadLine();
+
+        StoreEntry(_newWrite, _chosenPrompt);
+    }
+
+
     //displays a random prompt using list of prompts and random number
-    public string DisplayPrompt(){
+    public void ChoosePrompt(){
         Random num = new Random();
         int number = num.Next(10);
 
@@ -35,8 +48,7 @@ public class Entry{
             "What are three things you're grateful for today?",
             "What musician or song are you grateful for? Why?"
         };
-        string prompt = _writingPrompts[number];
-        return prompt;
+        _chosenPrompt = _writingPrompts[number];
     }
-
+        
 }

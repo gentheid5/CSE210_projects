@@ -11,17 +11,14 @@ class Program
             // display menu options, call different class methods depending on user responce
             Journal _userJournal = new Journal();
             int _userOption = _userJournal.DisplayMenu();
+            // calling new entry class
+            Entry _newEntry = new Entry();
+            
 
             if (_userOption == 1){
-                // calling new entry class
-                Entry _newEntry = new Entry();
-
                 // prints prompt, stores entry with date and prompt
-                string prompt = _newEntry.DisplayPrompt();
-                Console.Write($"{prompt}\n>");
-                string entry = _newEntry._newWrite = Console.ReadLine();
+                _newEntry.DisplayEntry();
 
-                _newEntry.StoreEntry(entry, prompt);
             }
 
             else if (_userOption == 2){

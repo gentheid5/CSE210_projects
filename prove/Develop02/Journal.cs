@@ -36,7 +36,9 @@ public class Journal{
 
     // Displays called journal
     public void DisplayJournal(List<string> _journalEntries){
-
+        foreach (string Entry in _journalEntries){
+            Console.WriteLine($"{Entry}");
+        }
     }
         
 
