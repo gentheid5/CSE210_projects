@@ -10,10 +10,9 @@ class Program
 
             // display menu options, call different class methods depending on user responce
             Journal _userJournal = new Journal();
-            int _userOption = _userJournal.DisplayMenu();
-            // calling new entry class
             Entry _newEntry = new Entry();
-            
+
+            int _userOption = _userJournal.DisplayMenu();
 
             if (_userOption == 1){
                 // prints prompt, stores entry with date and prompt
@@ -22,6 +21,7 @@ class Program
             }
 
             else if (_userOption == 2){
+                _userJournal.DisplayJournal();
             }
 
             else if (_userOption == 3){

@@ -1,23 +1,26 @@
 public class Entry{
 //Attributes
-    //string for users new entry
-    public string _newWrite;
 
     //string to store current prompt
     public string _chosenPrompt;
 
-    // list to store current entries in journal
-    public List<string> _currentEntries = new List<string>();
+    //list to store dated entries in current journal
+    List<string> _datedEntry = new List<string>();
 
 
 //Methods
     //Stores new entry
-    public void StoreEntry(string _newEntry, string _chosenPrompt){
+    public void StoreEntry(string _entryForList, string _promptForList){
         //returns current date
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
 
-        _currentEntries.Add($"{dateText}: {_newWrite} \n{_chosenPrompt}");
+        _datedEntry.Add($"{dateText}: {_entryForList} \n{_promptForList}");
+    }
+
+    // method to allow other classes to access list of entries
+    public List<string> GetStoredEntries(){
+        return _datedEntry;
     }
 
 
@@ -27,6 +30,7 @@ public class Entry{
         Console.Write($"{_chosenPrompt}\n>");
         string _newWrite = Console.ReadLine();
 
+        // calls storeentry method to store entered info
         StoreEntry(_newWrite, _chosenPrompt);
     }
 

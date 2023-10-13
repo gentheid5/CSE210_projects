@@ -1,8 +1,9 @@
 public class Journal{
 
+    Entry _newEntries = new Entry();
 // member variables
     //List of journal entries
-    public List<string> _journalEntries = new List<string>();
+
 
     //string of filename user will want to open
     public string _fileName = "";
@@ -35,8 +36,11 @@ public class Journal{
     }
 
     // Displays called journal
-    public void DisplayJournal(List<string> _journalEntries){
-        foreach (string Entry in _journalEntries){
+    public void DisplayJournal(){
+
+        List<string> _listOfEntries = _newEntries.GetStoredEntries();
+
+        foreach (string Entry in _listOfEntries){
             Console.WriteLine($"{Entry}");
         }
     }
