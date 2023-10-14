@@ -3,7 +3,7 @@ public class Journal{
     Entry _newEntries = new Entry();
 // member variables
     //List of journal entries
-
+    List<Entry> _datedEntry = new List<Entry>();
 
     //string of filename user will want to open
     public string _fileName = "";
@@ -25,6 +25,11 @@ public class Journal{
         return userInput;
     }
 
+    public void StoreEntry(Entry entry){
+
+        _datedEntry.Add(entry);
+    }
+
     //run txt file to list of strings to iterate through
     public List<string> InitializeJournal(string _fileName){
         return null;
@@ -37,11 +42,8 @@ public class Journal{
 
     // Displays called journal
     public void DisplayJournal(){
-
-        List<string> _listOfEntries = _newEntries.GetStoredEntries();
-
-        foreach (string Entry in _listOfEntries){
-            Console.WriteLine($"{Entry}");
+        foreach (Entry entry in _datedEntry){
+            Console.WriteLine($"{entry._date}  {entry._chosenPrompt}\n  {entry._currentEntry}");
         }
     }
         

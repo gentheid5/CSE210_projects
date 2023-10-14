@@ -4,20 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        Journal _userJournal = new Journal();
+        
         int run = 99;
         while (run != 5){
 
             // display menu options, call different class methods depending on user responce
-            Journal _userJournal = new Journal();
-            Entry _newEntry = new Entry();
+            
 
             int _userOption = _userJournal.DisplayMenu();
 
             if (_userOption == 1){
+                Entry _newEntry = new Entry();
                 // prints prompt, stores entry with date and prompt
-                _newEntry.DisplayEntry();
-
+                _newEntry.SetupEntry();
+                _userJournal.StoreEntry(_newEntry);
             }
 
             else if (_userOption == 2){
