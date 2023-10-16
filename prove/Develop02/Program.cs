@@ -1,5 +1,6 @@
 using System;
 
+
 class Program
 {
     static void Main(string[] args)
@@ -26,9 +27,11 @@ class Program
             }
 
             else if (_userOption == 3){
+                _userJournal.InitializeJournal();
             }
 
             else if (_userOption == 4){
+                _userJournal.ConvertList();
             }
 
             else{
