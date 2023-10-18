@@ -1,0 +1,40 @@
+-display a random scripture from list of scriptures
+-select 3 random words to convert to ___ when 'enter' is pressed
+-quit program when all words are blank and enter is pressed
+
+
+
+
+WORD-   
+    selects random int
+    uses int to select item(word) in list(scripture)
+    converts random words to ___
+attributes-
+    public List<string> _chosenScripture;
+methods-
+    private int RandomInt();
+    private 
+
+
+
+Phrase- 
+    gets phrase that user wants to memorize
+    stores phrase 
+    converts words to list of words
+    updates scripture with 3 less words using WORD class
+attributes-
+    Public string _phrase;
+methods-
+    private void GetPhrase();
+    
+
+
+
+refference- 
+    get reffrence of current scripture
+    displays reffrence before scripture
+attributes-
+    public string _currentRefference;
+methods-
+    public string DisplayReffrence();
+    Private void StoreReffrence();
